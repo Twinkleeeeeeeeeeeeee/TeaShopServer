@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.ljq.mapper.InsertOrderInfoMapper">
+    <insert id="insertOrderInfo">
+      insert into order_info (orderId,teaId,numberOrders) values (#{orderId},#{teaId},#{numberOrders })
+    </insert>
+</mapper>

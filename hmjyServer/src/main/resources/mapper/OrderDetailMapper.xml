@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.mapper.OrderDetailMapper">
+    <select id="getOrderDetail" resultType="java.util.Map">
+        SELECT a.name,a.price,b.numberOrders FROM tea_list a,order_info b where a.id = b.teaId AND b.orderId = #{orderId }
+    </select>
+</mapper>

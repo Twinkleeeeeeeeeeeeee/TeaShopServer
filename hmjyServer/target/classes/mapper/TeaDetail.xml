@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.ljq.mapper.TeaDetailMapper">
+    <select id="getTeaDetail" resultType="java.util.Map" >
+        SELECT a.id,a.name,a.price,a.categoryId,a.numberGoodReputation,a.content,a.stores,COUNT(b.numberOrders) numberOrders FROM tea_list a LEFT JOIN order_info b ON a.id=b.teaId WHERE a.id=#{teaId} GROUP BY b.teaId
+    </select>
+</mapper>

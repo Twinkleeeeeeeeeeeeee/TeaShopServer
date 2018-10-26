@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.ljq.mapper.GetUserInfoMapper">
+    <select id="getUserApiInfo" resultType="java.util.Map">
+      SELECT t1.nickName,t1.gender,t1.city,t1.province,t1.country,t2.phoneNumber FROM user_info t1,user_phone t2 WHERE t1.openId = t2.userOpenId
+    </select>
+</mapper>

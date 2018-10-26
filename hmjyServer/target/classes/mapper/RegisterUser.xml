@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.ljq.mapper.RegisterUserMapper">
+    <insert id="add" parameterType="UserInfo">
+        insert into user_info (openId,nickName,gender,city,province,country,avatarUrl,unionId,uid) values (#{openId },#{nickName },#{gender },#{city },#{province },#{country },#{avatarUrl },#{unionId },#{uid})
+    </insert>
+
+    <select id="getUid" resultType="long" >
+        select a.uid from user_info a where a.openId = #{openId }
+    </select>
+
+    <select id="isGetOpenId" resultType="String">
+        select a.openId from user_info a where a.openId = #{openId }
+    </select>
+    <insert id="addPhone" parameterType="UserPhone">
+        insert into user_phone (phoneNumber,userOpenId,countryCode) values (#{phoneNumber },#{userOpenId },#{countryCode })
+    </insert>
+</mapper>

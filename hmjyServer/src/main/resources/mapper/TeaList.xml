@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.mapper.TeaListMapper">
+    <select id="getTeaList" resultType="TeaInfo">
+        select a.id,a.name,a.price,a.categoryId,a.content,a.stores,a.pic from tea_list a
+    </select>
+    <select id="getTeaListByName" resultType="TeaInfo">
+        select a.id,a.name,a.price,a.categoryId,a.content,a.stores,a.pic from tea_list a where a.name LIKE "%"#{nameLike }"%"
+    </select>
+    <select id="getTeaListBycategoryId" resultType="TeaInfo">
+         select a.id,a.name,a.price,a.categoryId,a.content,a.stores,a.pic from tea_list a where a.categoryId =#{categoryId}
+    </select>
+</mapper>

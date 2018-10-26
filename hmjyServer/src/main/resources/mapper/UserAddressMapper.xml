@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.mapper.UserAddressMapper">
+    <select id="getUserAddress" resultType="Address">
+    SELECT a.id,a.provinceId,a.cityId,a.districtId,a.address,a.linkMan,a.mobile,a.code FROM user_address a WHERE a.userId = #{userId } and a.isDefault = 'true'
+    </select>
+    <insert id="insertUserAddress" parameterType="Address">
+        insert into user_address (provinceId,cityId,districtId,address,linkMan,mobile,code,userId,isDefault) values (#{provinceId },#{cityId},#{districtId },#{address },#{linkMan},#{mobile},#{code},#{userId },#{isDefault})
+    </insert>
+    <select id="getAddressList" resultType="Address">
+        SELECT a.id,a.provinceId,a.cityId,a.districtId,a.address,a.linkMan,a.mobile,a.code FROM user_address a WHERE a.userId = #{userId }
+    </select>
+</mapper>

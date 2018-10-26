@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmjy.mapper.TeaCategoryMapper">
+    <select id="getTeaCategory" resultType="TeaCategory">
+      select a.id,a.isUse,a.key,a.level,a.name,a.paixu,a.pid,a.type from tea_category_all a
+    </select>
+</mapper>
